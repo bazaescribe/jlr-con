@@ -17,7 +17,7 @@ const Services = () => {
 
       for(const service of services){
         const {top, bottom} = service.getBoundingClientRect();
-        const margin = 500;
+        const margin = 300;
 
         if(top < window.innerHeight && bottom >= margin){
           currentInView = service;
@@ -64,7 +64,7 @@ const Services = () => {
   return (
     <section ref={wrapperRef} className="wrapper">
       <article className="container">
-        <div className="row">
+        <div className="row py-1000">
           <div>
             <div className='service' id="design">
               <div>
@@ -123,16 +123,16 @@ const Services = () => {
           <div className='right-panel'>
             <div className="sticky">
               <div className='graphic' id="design-img">
-                <Image src="/assets/screens/wireframe.png" height={720} width={351} alt='Wireframe'></Image>
+                <Image src="/assets/screens/wireframe.png" height={580} width={283} alt='Wireframe'></Image>
               </div>
               <div className='graphic' id="dev-img">
-                <Image src="/assets/screens/mockup.png" height={720} width={351} alt='Wireframe'></Image>
+                <Image src="/assets/screens/mockup.png" height={580} width={283} alt='Wireframe'></Image>
               </div>
               <div className='graphic' id="cloud-img">
-                <Image src="/assets/screens/cloud.png" height={720} width={351} alt='Wireframe'></Image>
+                <Image src="/assets/screens/cloud.png" height={580} width={283} alt='Wireframe'></Image>
               </div>
               <div className='graphic' id="ai-img">
-                <Image src="/assets/screens/ai.png" height={720} width={351} alt='Wireframe'></Image>
+                <Image src="/assets/screens/ai.png" height={580} width={283} alt='Wireframe'></Image>
               </div>
             </div>
           </div>
