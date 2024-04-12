@@ -24,12 +24,17 @@
 }
 
 .graphic {
-  background: rgba(0, 255, 8, 0.3);
   position: absolute;
   top: 0px;
   height: calc(100vh - 64px);
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 0.5s ease; /* Transición suave de la opacidad */
+  opacity: 0; /* Comienza con opacidad 0 (oculto) */
+  display: flex;
+}
+
+.graphic.show {
+  opacity: 1; /* Opacidad completa cuando debe mostrarse */
 }

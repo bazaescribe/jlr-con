@@ -7,12 +7,12 @@ import "./style.css"
 
 const Services = () => {
   const wrapperRef = useRef(null);
-  const [activeGraphic, setActiveGraphic] = useState('design-img');
 
   useEffect(() => {
     const handleScroll = () => {
       const wrapper = wrapperRef.current;
       const services = wrapper.getElementsByClassName('service')
+      const graphics = wrapper.getElementsByClassName('graphic')
       let currentInView = null;
 
       for(const service of services){
@@ -25,7 +25,18 @@ const Services = () => {
         }
       }
 
+      // Remover la clase 'show' de todos los gráficos primero
+      for (const graphic of graphics) {
+        graphic.classList.remove('show');
+      }
+
       if (currentInView) {
+        const graphicId = currentInView.id + '-img';
+        const graphicToShow = wrapper.querySelector(`#${graphicId}`);
+        if (graphicToShow) {
+          graphicToShow.classList.add('show');
+        }
+
         switch (currentInView.id) {
           case 'design':
             wrapper.style.backgroundColor = '#E5E3D0'; // Rojo para diseño
@@ -43,27 +54,6 @@ const Services = () => {
             wrapper.style.backgroundColor = 'transparent'; // Fallback
         }
       }
-
-      if (currentInView) {
-        switch (currentInView.id) {
-          case 'design':
-            setActiveGraphic('design-img');
-            break;
-          case 'dev':
-            setActiveGraphic('dev-img');
-            break;
-          case 'cloud':
-            setActiveGraphic('cloud-img');
-            break;
-          case 'ai':
-            setActiveGraphic('ai-img');
-            break;
-          default:
-            setActiveGraphic(''); // Ninguna imagen seleccionada
-        }
-      }
-      
-
 
       const scroll = window.scrollY;
     };
@@ -141,7 +131,7 @@ const Services = () => {
               <div className='graphic' id="cloud-img">
                 <Image src="/assets/screens/cloud.png" height={720} width={351} alt='Wireframe'></Image>
               </div>
-              <div className='graphic' id="cloud-img">
+              <div className='graphic' id="ai-img">
                 <Image src="/assets/screens/ai.png" height={720} width={351} alt='Wireframe'></Image>
               </div>
             </div>
