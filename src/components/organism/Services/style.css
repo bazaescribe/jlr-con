@@ -1,0 +1,35 @@
+.wrapper {
+  transition: background-color 0.5s ease; /* Ajusta la duración y la función de timing según necesites */
+}
+
+.service {
+  min-height: 100vh;
+  display:  flex;
+  align-items: center;
+}
+
+#design {
+  /* color: var(--tangerine) !important; */
+  color: var(--tangerine);
+}
+
+#cloud {
+  color: var(--powder);
+}
+
+.sticky { 
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+}
+
+.graphic {
+  background: rgba(0, 255, 8, 0.3);
+  position: absolute;
+  top: 0px;
+  height: calc(100vh - 64px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

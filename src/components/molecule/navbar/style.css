@@ -1,0 +1,43 @@
+/* Existing navbar styles */
+.navbar {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.5s ease; /* Animation for the padding change */
+}
+
+/* New styles for the shrunken navbar */
+.navbar.shrink {
+  padding: 12px 32px; /* Reduced padding when navbar is shrunken */
+  background: var(--platinum);
+  box-shadow: 0px 4px 24px 24px rgba(0, 0, 0, 0.08);
+  color: black;
+}
+
+.navbar.shrink .svg-logo path{
+  fill: #000; /* Change color to red */
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 12px;
+}
+
+/* Targeting SVG by a class */
+.svg-logo path {
+  fill: #000; /* Change color to red */
+}
+
+
+@media screen and (max-width: 1000px) {
+  .navbar .menu{
+    display: none;
+  }
+}

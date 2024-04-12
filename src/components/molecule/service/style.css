@@ -1,0 +1,22 @@
+.service {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.service .photo {
+  width: 420px;
+  height: 420px;
+  background: orange;
+  overflow: hidden;
+}
+
+.service .info {
+  padding: 16px 0px;
+  transition: 500ms ease all;
+}
+
+.service:hover .info {
+  padding-left: 16px;
+  background: rgba(0, 0, 0, 0.1);
+}

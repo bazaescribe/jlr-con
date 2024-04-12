@@ -1,0 +1,11 @@
+.wrapper {
+  background: green;
+  height: 2500px;
+}
+
+.fixed {
+  position: sticky;
+  top: 0px;
+  height: 100px;
+  background: red;
+}
